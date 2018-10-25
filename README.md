@@ -46,7 +46,7 @@ export default AppStore;
 
 Add `mst-loading` as middleware
 
-```
+```js
 import { LoadingMiddleWare } from 'mst-loading';
 
 const appStore = stores.create({});
@@ -99,7 +99,7 @@ class HomePage extends Component {
     const { appStore } = this.props;
     const { loading } = appStore;
 
-    if (loading.status('/dataState/apiStore.fetchApi').isLoading) {
+    if (loading.status('/dataState/apiStore.fetchApi').isLoading) { // <-- isLoading flag
       return <Spin />;
     }
 
@@ -114,7 +114,7 @@ class HomePage extends Component {
 
 ## API
 
-### LoadingMiddleware
+### `LoadingMiddleware`
 
 Create loadingStore for manage `loading` flag
 
@@ -124,13 +124,17 @@ Create loadingStore for manage `loading` flag
 - `debug` (bool = false) turn in on so can you track debug easily
 
 ### Example
-
-```
+Using middleware as `loading` store and turn on debug
+```js
 const appStore = stores.create({});
 addMiddleware(appStore, LoadingMiddleWare('loading', true));
 ```
 
-### Loading type
+### `[yourLoadingStore].status(effectName)` : Status
+- `effectName` (string)  your effect name
+It will return Status type bellow
+
+### `Status` type
 
 Every instance of a flag has type
 
@@ -138,7 +142,7 @@ Every instance of a flag has type
 - `isLoading` (bool) loading flag
 - `error` error returned by your async function
 
-### LoadingStore
+### `LoadingStore`
 
 Just ignore it
 
