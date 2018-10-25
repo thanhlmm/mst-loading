@@ -16,13 +16,13 @@
   ],
   "license": "MIT",
   "author": "Thanh Le",
-  "homepage": "http://github.com/eunikitin/modern-package-boilerplate.git",
+  "homepage": "https://github.com/thanhlmm/mst-loading.git",
   "repository": {
     "type": "git",
-    "url": "http://github.com/eunikitin/modern-package-boilerplate.git"
+    "url": "https://github.com/thanhlmm/mst-loading.git"
   },
   "bugs": {
-    "url": "http://github.com/eunikitin/modern-package-boilerplate/issues"
+    "url": "https://github.com/thanhlmm/mst-loading.git/issues"
   },
   "main": "lib/index.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "flow": "flow",
     "flow-typed": "npm run clean && flow-typed install --overwrite || true",
     "lint": "eslint src",
-    "prepublish": "npm run clean && npm run test && npm run flow && npm run lint && npm run build"
+    "prepublish": "npm run clean && npm run build"
   },
   "peerDependencies": {
     "mobx-state-tree": "^3.7.1"
