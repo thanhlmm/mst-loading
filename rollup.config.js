@@ -1,7 +1,6 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
-import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify';
 
 const env = process.env.NODE_ENV;
@@ -11,7 +10,8 @@ const config = {
   external: ['mobx', 'mobx-state-tree'],
   output: {
     format: 'umd',
-    name: 'npmPackageES6Boilerplate',
+    name: 'mst-loading',
+    globals: 'mst-loading',
   },
 
   plugins: [
@@ -23,7 +23,6 @@ const config = {
     replace({
       'process.env.NODE_ENV': JSON.stringify(env),
     }),
-    commonjs(),
   ],
 };
 
