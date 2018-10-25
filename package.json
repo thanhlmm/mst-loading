@@ -1,6 +1,6 @@
 {
   "name": "mst-loading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mobx-State-Tree middleware for auto triggering `loading` flag for you async function",
   "keywords": [
     "npm-package",
