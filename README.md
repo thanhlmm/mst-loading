@@ -1,6 +1,6 @@
 # MST-Loading
 
-This is Mobx-State-Tree middleware for auto triggering `loading` flag for you async function. You can save lots of time trying to manage `loading` flag!
+Mobx-State-Tree middleware for auto triggering `loading` flag for you async function. You can save lots of time trying to manage `loading` flag!
 
 ⏰ = 🤑
 
@@ -9,7 +9,7 @@ This is Mobx-State-Tree middleware for auto triggering `loading` flag for you as
 ### Install
 
 ```
-npm install mst-loading
+npm install mst-loading --save
 ```
 
 ### Setup
@@ -47,8 +47,10 @@ export default AppStore;
 Add `mst-loading` as middleware
 
 ```
+import { LoadingMiddleWare } from 'mst-loading';
+
 const appStore = stores.create({});
-addMiddleware(appStore, LoadingMiddleWare('loading', true));
+addMiddleware(appStore, LoadingMiddleWare('loading', true)); // <-- add middleware
 ```
 
 [Read more](https://github.com/mobxjs/mobx-state-tree/blob/master/packages/mst-middlewares/README.md) How to using middleware in MobX State Tree
@@ -67,7 +69,7 @@ const apiStore = types
   .actions(self => {
     const fetchApi = flow(function* fetchApi() {
       const response = yield transports.get('http://ip-api.com/json');
-      yield delay(5000);
+      yield delay(5000); // Make some delay
       console.log(response.data);
       self.result = response.data;
     });
