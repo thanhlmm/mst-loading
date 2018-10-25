@@ -14,7 +14,7 @@ npm install mst-loading
 
 ### Setup
 
-#### Add loading store to under your root node
+#### Add loading store under under your root node
 
 Example
 
@@ -27,7 +27,7 @@ const AppStore = types
   .model('AppStore', {
     currentUser: types.optional(types.string, 'Guest'),
     dataState: types.optional(DataState, {}),
-    loading: LoadingStore // <--- Addd this store to your under root node
+    loading: LoadingStore // <--- Add this store under under your root node
   })
   .actions(self => {
     const changeUser = name => {
@@ -78,7 +78,7 @@ const apiStore = types
   });
 ```
 
-Then get `loading` flag by this path convention `{pathToYourNode}/{yourAsyncFunctionName}`
+Then get `loading` flag by this path convention `{pathToYourNode}.{yourAsyncFunctionName}`
 
 Example
 
