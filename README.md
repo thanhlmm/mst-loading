@@ -27,7 +27,7 @@ const AppStore = types
   .model('AppStore', {
     currentUser: types.optional(types.string, 'Guest'),
     dataState: types.optional(DataState, {}),
-    loading: LoadingStore // <--- Add this store under under your root node
+    loading: LoadingStore // <--- Add this store under your root node
   })
   .actions(self => {
     const changeUser = name => {
